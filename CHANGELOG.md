@@ -7,14 +7,16 @@ Versioning: semantic (major.minor.patch) — see README for what each level mean
 
 ---
 
-## [v2.1] — April 2026 — Initial release
+## [v2.1] — April 2026 — Silent auto-update on session start
+
+- Added automatic version check to `Start of Every Session`
+- On launch, CC silently fetches the latest CLAUDE.md from this repo
+- If a newer version is found, CC overwrites both the project-level and global local copies automatically
+- No user action required — update happens before the session checklist runs
+- User is notified of the update version but not interrupted
+
+## [v2.0] — April 2026 — Initial release
 
 - First version committed to the centralised `freedman-claude-standards` repository
 - Establishes this repo as the single source of truth for the Freedman global CLAUDE.md standard
-- Includes improved GitHub and commit message conventions:
-  - Conventional commits format (`type(scope): description`)
-  - Commit body standards for preserving compliance references
-  - Branch strategy and sprint tagging guidance
-  - Backup branch convention before destructive Git operations
-- Version check instruction added to the Start of Every Session section
 - Prepared by Richard Freedman, Fractional CTO | Implemented by IT Team (Josh / Ryan)
