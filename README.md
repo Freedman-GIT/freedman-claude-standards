@@ -31,22 +31,35 @@ the global standard only.
 
 ---
 
-## How to keep your local CLAUDE.md up to date
+## Installing on a new machine
 
-At the start of every Claude Code session, CC will check whether a newer version of the
-standard is available. If it is, you will see an alert:
+Run this once in Terminal on any new or existing machine:
 
-```
-A newer version of the Freedman CLAUDE.md standard is available.
-  Current: [version in this file]
-  Latest:  [version in downloaded file]
-
-Run 'cp /tmp/claude-md-latest.md ./CLAUDE.md' to update,
-or type SKIP to continue with the current version.
+```bash
+curl -s https://raw.githubusercontent.com/Freedman-GIT/freedman-claude-standards/main/install.sh | bash
 ```
 
-CC will not auto-replace your local file. It alerts you and waits for an explicit
-instruction before proceeding.
+This will:
+- Create `~/Desktop/Freedman Development/` if it doesn't exist
+- Download the latest `CLAUDE.md` to that folder
+- Update `~/.claude/CLAUDE.md` if Claude Code is already installed
+- Confirm success
+
+After this one-time step, all future updates are automatic.
+
+---
+
+## How updates work
+
+At the start of every Claude Code session, CC silently checks whether a newer version
+of the standard is available. If it is, CC automatically overwrites the local copy and
+notifies the user:
+
+```
+CLAUDE.md has been updated to v2.X. This session uses the new standard.
+```
+
+No user action required. Updates happen before the session checklist runs.
 
 ---
 
