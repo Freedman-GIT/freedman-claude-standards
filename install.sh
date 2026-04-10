@@ -31,7 +31,7 @@ if ! curl -s --fail "$REPO_URL" -o /tmp/claude-md-latest.md; then
   exit 1
 fi
 
-LATEST_VERSION=$(grep "Freedman International Development Standards" /tmp/claude-md-latest.md | head -1)
+LATEST_VERSION=$(grep "^\*Freedman International Development Standards" /tmp/claude-md-latest.md | head -1)
 echo "  Found: $LATEST_VERSION"
 
 # ── 2. Install to Freedman Development folder ─────────────────────────────────
